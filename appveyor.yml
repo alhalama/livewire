@@ -1,6 +1,15 @@
 environment:
   nodejs_version: "6"
 
+platform:
+- x64
+
+cache:
+  - node_modules
+  - app\node_modules
+  - '%APPDATA%\npm-cache'
+  - '%USERPROFILE%\.electron'
+
 # Install scripts. (runs after repo cloning)
 install:
   # Get the latest stable version of Node.js or io.js
@@ -17,5 +26,5 @@ test_script:
 #  - npm test
 
 # Don't actually build.
-build: 
+build_script: 
   - npm run release-win64
